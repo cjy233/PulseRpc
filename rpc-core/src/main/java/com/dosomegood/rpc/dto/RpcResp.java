@@ -49,5 +49,16 @@ public class RpcResp<T> implements Serializable {
         rpcResp.setMsg(msg);
         return rpcResp;
     }
+
+    public static <T> RpcResp<T> fail(String reqId,String msg) {
+        RpcResp<T> rpcResp = new RpcResp<T>();
+        rpcResp.setCode(RpcRespStatus.FAIL.getCode());
+        rpcResp.setReqId(reqId);
+        rpcResp.setMsg(msg);
+        return rpcResp;
+    }
+
+
+
 }
 

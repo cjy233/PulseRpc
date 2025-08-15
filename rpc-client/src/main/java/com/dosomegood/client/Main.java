@@ -7,6 +7,7 @@ import com.dosomegood.rpc.dto.RpcReq;
 import com.dosomegood.rpc.dto.RpcResp;
 import com.dosomegood.rpc.proxy.RpcClientProxy;
 import com.dosomegood.rpc.transmission.RpcClient;
+import com.dosomegood.rpc.transmission.netty.client.NettyRpcClient;
 import com.dosomegood.rpc.transmission.socket.client.SocketRpcClient;
 import com.dosomegood.rpc.util.ThreadPoolUtils;
 
@@ -19,6 +20,10 @@ public class Main {
         User user = userService.getUser(1L);
 
         System.out.println(user);
+
+//        RpcClient rpcClient = new NettyRpcClient();
+//
+//        RpcResp<?> rpcResp = rpcClient.sendReq(RpcReq.builder().interfaceName("请求数据").build());
 
     }
 
